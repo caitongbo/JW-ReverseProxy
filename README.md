@@ -1,4 +1,4 @@
-# ReverseProxyYCTUAEdu
+# ReverseProxyYCTU
 # 反向代理教务管理系统
 
 反向代理教务管理系统的目的，就是方便在外网（学校外部网络）使用教务管理系统。
