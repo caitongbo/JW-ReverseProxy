@@ -11,7 +11,7 @@
 
 ## 虚拟机环境配置
 1. Nginx
-2. pptp
+2. PPTP Client
 
 ## 用到的脚本
 1. connect.sh (通过pptp连接vpn)
@@ -20,9 +20,9 @@
 ## 脚本执行顺序
 1. 安装Nginx，配置对jwgl.yctu.edu.cn 的反向代理，nginx安装完成后会生成/etc/nginx/nginx.conf 配置文件，参考nginx/nginx.conf，完成反向代理设置
 
-2. 安装PPTP
+2. 安装PPTP Client
 
-    0.先安装PPTP VPN客户端 
+    0.先安装PPTP Client 
 
         yum install -y ppp pptp pptp-setup
     
