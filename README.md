@@ -19,6 +19,7 @@
 
 ## 脚本执行顺序
 1. 安装Nginx，配置对jwgl.yctu.edu.cn 的反向代理，nginx安装完成后会生成/etc/nginx/nginx.conf 配置文件，参考nginx/nginx.conf，完成反向代理设置
+
 2. 安装pptp
 
     1.新建yctu vpn启动服务项
