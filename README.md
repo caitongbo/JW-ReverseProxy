@@ -51,13 +51,10 @@
     
         chkconfig yctu on
     
-    6.VPN操作命令
+    6.启动yctu VPN服务
     
-        service yctu start  #启动vpn服务
+        service yctu start 
     
-        service yctu stop   #关闭vpn服务
-    
-        service yctu restart  #重启vpn服务
 
 3. 添加定时任务，定时重启是因为学校的vpn连接会24小时自动断开，所以就需要添加一个重启脚本，每天00:00重启我们的主机
 
