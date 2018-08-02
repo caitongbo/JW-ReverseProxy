@@ -51,7 +51,7 @@
     
         chkconfig yctu on
     
-    6.启动yctu VPN服务
+    6.启动yctu vpn服务
     
         service yctu start 
     
