@@ -22,44 +22,44 @@
 
 2. 安装pptp
 
-    1.新建yctu vpn启动服务项
+        1.新建yctu vpn启动服务项
 
-    vim /etc/rc.d/init.d/yctu
+        vim /etc/rc.d/init.d/yctu
  
-    2.复制以下文本内容进/etc/rc.d/init.d/yctu
+        2.复制以下文本内容进/etc/rc.d/init.d/yctu
  
-    #!/bin/bash
-    #chkconfig: 2345 80 90
-    #description: Starts and stops the yctu vpn daemon
-    pptpsetup -create yctu -server vpn.yctu.edu.cn -username USERNAME -password PASSWORD --start #USERNAME=your student id,PASSWORD=your password of your vpn.yctu.edu.cn
-    sleep 3 #just wait for connecting to vpn.yctu.edu.cn successfully
-    route add -net 210.28.176.107 netmask 255.255.255.255 dev ppp0 #change the route table,let the address use ssl-vpn channel.
- 
-    3.添加执行权限
- 
-    chmod +x /etc/rc.d/init.d/yctu
- 
-    4.添加yctu vpn服务项
+        #!/bin/bash
+        #chkconfig: 2345 80 90
+        #description: Starts and stops the yctu vpn daemon
+        pptpsetup -create yctu -server vpn.yctu.edu.cn -username USERNAME -password PASSWORD --start #USERNAME=your student id,PASSWORD=your password of your vpn.yctu.edu.cn
+        sleep 3 #just wait for connecting to vpn.yctu.edu.cn successfully
+        route add -net 210.28.176.107 netmask 255.255.255.255 dev ppp0 #change the route table,let the address use ssl-vpn channel.
+    
+        3.添加执行权限
+    
+        chmod +x /etc/rc.d/init.d/yctu
+    
+        4.添加yctu vpn服务项
 
-    chkconfig --add yctu
- 
-    5.设置yctu vpn开机启动
- 
-    chkconfig yctu on
- 
-    6.VPN操作命令
- 
-    service yctu start  #启动vpn服务
- 
-    service yctu stop   #关闭vpn服务
- 
-    service yctu restart  #重启vpn服务
+        chkconfig --add yctu
+    
+        5.设置yctu vpn开机启动
+    
+        chkconfig yctu on
+    
+        6.VPN操作命令
+    
+        service yctu start  #启动vpn服务
+    
+        service yctu stop   #关闭vpn服务
+    
+        service yctu restart  #重启vpn服务
 
 3. 添加定时任务，定时重启是因为学校的vpn连接会24小时自动断开，所以就需要添加一个重启脚本，每天00:00重启我们的主机
 
-    crontab -e #编辑定时
+        crontab -e #编辑定时
 
-    0 0 * * * /sbin/reboot  #增加此语句，每天00:00点自动重启服务器
+        0 0 * * * /sbin/reboot  #增加此语句，每天00:00点自动重启服务器
 
 ## 结束
 
