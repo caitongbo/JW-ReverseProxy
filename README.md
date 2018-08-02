@@ -1,7 +1,7 @@
 # ReverseProxyYCTUAEdu
-# 反向代理师院教务管理系统
+# 反向代理教务管理系统
 
-反向代理师院教务管理系统的目的，就是方便在外网（学校外部网络）使用师院教务管理系统。
+反向代理教务管理系统的目的，就是方便在外网（学校外部网络）使用教务管理系统。
 
 ## 使用条件
 
@@ -14,14 +14,18 @@
 2. pptp
 
 ## 用到的脚本
-1. connect.sh (通过pptp连接师院vpn)
+1. connect.sh (通过pptp连接vpn)
 2. nginx.conf (nginx 的配置文件，很重要)
 
 ## 脚本执行顺序
 1. 安装Nginx，配置对jwgl.yctu.edu.cn 的反向代理，nginx安装完成后会生成/etc/nginx/nginx.conf 配置文件，参考nginx/nginx.conf，完成反向代理设置
 
-2. 安装pptp
+2. 安装PPTP
 
+    0.先安装PPTP VPN客户端 
+
+        yum install -y ppp pptp pptp-setup
+    
     1.新建yctu vpn启动服务项
 
         vim /etc/rc.d/init.d/yctu
